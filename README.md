@@ -3,8 +3,8 @@
 ![MathQA](https://img.shields.io/badge/Task-PhysicsQA-red) 
 ![Mathematical Reasoning](https://img.shields.io/badge/Task-Physics_Reasoning-red) 
 ![Multi-Modal](https://img.shields.io/badge/Task-Multi--Modal-red) 
-![o4-mini](https://img.shields.io/badge/Dataset-SeePhys-blue)
-
+![dataset](https://img.shields.io/badge/Dataset-SeePhys-blue)
+![challenge](https://img.shields.io/badge/Challenge-ICML_2025_Workshop-Yellow)
 
 ![o4-mini](https://img.shields.io/badge/Model-o4_mini-green)
 ![o1](https://img.shields.io/badge/Model-o1-green)
@@ -22,7 +22,7 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 🌟 For more details, please refer to the project page with dataset exploration and visualization tools: [https://github.com/SeePhys/seephys-project](https://github.com/SeePhys/seephys-project).
 
 
-[[🌐 Webpage](https://github.com/SeePhys/seephys-project)] [[📖 Paper](https://arxiv.org/pdf/2403.14624)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://github.com/SeePhys/seephys-project#leaderboard)]
+[[🌐 Webpage](https://github.com/SeePhys/seephys-project)] [[📖 Paper](https://arxiv.org/pdf/2403.14624)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://github.com/SeePhys/seephys-project#leaderboard)][🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)
 
 
 ## 💥 News
@@ -39,14 +39,19 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 <p align="center">
     <img src="asserts/fig1.png" width="100%"> <br>
 </p>
+
+
 It comprises **2,000 rigorously validated questions** covering a ​​comprehensive range of knoledge levels **from middle school to PhD qualifying exam levels**. These questions span **7 major fields** of both classical and modern physics. To assess the extent to which different models rely on visual information for reasoning, we curate **two subsets with different visual information enrichment** and additionally compile supplementary copies of 2,000 purely visual instances where all problem statements in texts are presented in picture form. Through meticulous selection of **21 diagram types** by domain experts, each problem challenges frontier MLLMs to integrate domain knowledge with visual understanding of physics diagrams (e.g., Feynman diagrams for particle interactions and Circuit diagrams for Electromagnetism).
 <p align="center">
     <img src="asserts/fig2.png" width="100%"> <br>
 </p>
+
+
 The figure below showcases examples of ​**​Vision-Essential​**​ and ​**​Vision-Optional​**​ samples. 
 <p align="center">
     <img src="asserts/fig3.png" width="100%"> <br>
 </p>
+
 Our experiments reveal that MLLMs encounter significant challenges in solving ​**​Vision-Essential​**​ problems, whereas for ​**​Vision-Optional​**​ problems, even when images only provide supplementary information, they can still enhance the model's problem-solving capabilities.
 
 <p align="center">
@@ -69,6 +74,8 @@ Accuracy scores of LLMs:
 | **7** | **Qwen2.5-72B**            | 41.2        | 40.2        | 25.2        | 8.2         | 26.8        | 12.8        | 18.6        | 17.8        | 21.1        |
 | **8** | **Gemma3-27B**             | 21.6        | 36.5        | 30.8        | 5.1         | 23.1        | 9.1         | 15.2        | 11.9        | 16.9        |
 | **9** | **Llama-3.1-8B**           | 26.5        | 15.7        | 17.8        | 3.9         | 7.6         | 3.7         | 10.3        | 8.4         | 9.2         |
+
+
 Accuracy scores of MLLMs:
 
 | #   | MLLMs                | Mid         | High        | BO          | AO       | UG          | SUG         | MA          | PhD         | Total       |
@@ -107,9 +114,11 @@ We strongly encourage all participants to concurrently submit their technical re
 
 
 
+
 ## 🚀 Evaluation with VLMEvalKit
 
 We have provided the evaluation code using [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) for our SeePhys. To ensure fairness in the [challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge), we will release the ground-truth to the public on ​**​July 18th​**​.
+
 
 
 ## 📐 Dataset Examples
