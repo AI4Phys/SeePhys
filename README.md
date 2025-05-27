@@ -22,7 +22,7 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 🌟 For more details, please refer to the project page with dataset exploration and visualization tools: [https://github.com/SeePhys/seephys-project](https://github.com/SeePhys/seephys-project).
 
 
-[[🌐 Webpage](https://github.com/SeePhys/seephys-project)] [[📖 Paper](https://arxiv.org/pdf/2403.14624)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://github.com/SeePhys/seephys-project#leaderboard)][🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)
+[[🌐 Webpage](https://github.com/SeePhys/seephys-project)] [[📖 Paper](https://arxiv.org/pdf/2403.14624)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://github.com/SeePhys/seephys-project#leaderboard)][[🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)]
 
 
 ## 💥 News
