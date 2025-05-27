@@ -25,11 +25,25 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 [[🌐 Webpage](https://github.com/SeePhys/seephys-project)] [[📖 Paper](https://arxiv.org/pdf/2403.14624)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://github.com/SeePhys/seephys-project#leaderboard)][[🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)]
 
 
+## 📖 Outlines
+- [💥 News ](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-news)
+- [👀 About SeePhys](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-about-seephys)
+- [🏆 Leaderboard ](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-leaderboard-on-the-benchmark-2000-samples)
+- 💪 [ Contributing to our Leaderboard](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#contributing-to-the-our-leaderboard)
+- [🚀 Evaluation with VLMEvalKit](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-evaluation-with-vlmevalkit)
+- [📐 Dataset Examples](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-dataset-examples)
+- [📈 Citation](https://github.com/lupantech/MathVista/blob/main/README.md#white_check_mark-cite)
+- [🤝 Contributors](https://github.com/lupantech/MathVista/blob/main/README.md#-contributors)
+
 ## 💥 News
 - **[2025.05.27]** 🔥 The [arXiv paper](https://arxiv.org/pdf/2403.14624) is online!
 - **[2025.05.24]** 🚀 We release the ***test*** set without ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys), and the [evaluation code](https://github.com/SeePhys/seephys-project)!
 - **[2025.05.24]** 🔥 We release the evaluation [code](https://github.com/SeePhys/seephys-project) using VLMEvalKit
 - **[2025.05.21]** 🎉 Our SeePhys is officially open for challenges at the [2nd AI for Math Workshop at ICML 2025](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)!
+
+
+
+
 
 
 ## 👀 About SeePhys
@@ -60,7 +74,7 @@ Our experiments reveal that MLLMs encounter significant challenges in solving �
 With **SeePhys**, we conduct extensive experiments to evaluate 28 leading LLMs and MLLMs such as o4-mini and Gemini-2.5-Pro. The results reveal that even with extensive chain-of-thought, none of the current models could surpass 55\% accuracy. Our analysis reveals that even non-essential diagrams can enhance physics reasoning performance when presented to MLLMs. 
 
 
-## 🏆 Leaderboard on the benchmark (2000 samples)
+## 🏆 Leaderboard on SeePhys (2000 samples)
 Accuracy scores of LLMs:
 
 | **#** | LLMs                       | Mid         | High        | BO          | AO          | UG          | SUG         | MA          | PhD         | Total       |
@@ -100,7 +114,7 @@ Accuracy scores of MLLMs:
 | **18**  | **InternVL2.5-8B**       | 17.6        | 12.4        | 9.3         | 2.9      | 5.6         | 3.2         | 4.1         | 5.1         | 6.2         |
 | **19**  | **LLaVA-OneVision-7B**   | 20.6        | 10.8        | 12.1        | 2.7      | 5.4         | 2.3         | 6.2         | 5.4         | 6.1         |
 
-## 💪Contributing to the our Leaderboard
+## 💪Contributing to our Leaderboard
 
 <p align="center">
     <img src="asserts/fig5.png" width="100%"> <br>
@@ -141,3 +155,8 @@ If you find **SeePhys** useful for your research and applications, please kindly
 }
 ```
 
+## 🤝 Contributors
+Here are the key contributors to this project:
+
+**Kun Xiang**<sup>1</sup>, **Heng Li**<sup>1</sup>, **Terry Jingchen Zhang**<sup>2</sup>, **Yinya Huang**<sup>2</sup>, **Zirong Liu**<sup>1</sup>, **Peixin Qu**<sup>1</sup>, **Jixi He**<sup>1</sup>, **Jiaqi Chen**<sup>4</sup>, **Yu-Jie Yuan**<sup>3</sup>, **Jianhua Han**<sup>3</sup>, **Hang Xu**<sup>3</sup>, **Hanhui Li**<sup>1</sup>, **Mrinmaya Sachan**<sup>2</sup> , **Xiaodan Liang**<sup>1</sup> 
+<sup>1</sup> Sun Yat-sen University <sup>2</sup> ETH Zurich <sup>3</sup> Huawei Noah's Ark Lab <sup>4</sup> The University of Hong Kong
