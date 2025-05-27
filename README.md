@@ -32,8 +32,8 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 - 💪 [ Contributing to our Leaderboard](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#contributing-to-the-our-leaderboard)
 - [🚀 Evaluation with VLMEvalKit](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-evaluation-with-vlmevalkit)
 - [📐 Dataset Examples](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-dataset-examples)
-- [📈 Citation](https://github.com/lupantech/MathVista/blob/main/README.md#white_check_mark-cite)
-- [🤝 Contributors](https://github.com/lupantech/MathVista/blob/main/README.md#-contributors)
+- [📈 Citation](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-citation)
+- [🤝 Contributors](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-contributors)
 
 ## 💥 News
 - **[2025.05.27]** 🔥 The [arXiv paper](https://arxiv.org/pdf/2403.14624) is online!
