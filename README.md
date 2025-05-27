@@ -119,7 +119,9 @@ Accuracy scores of MLLMs:
 <p align="center">
     <img src="asserts/fig5.png" width="100%"> <br>
 </p>
+
 Our SeePhys is now open for submissions at the ​**​ICML 2025 Challenge on Automated Math Reasoning and Extensions​**​! To evaluate your model, please submit benchmark results to our website following the official [guidelines](https://sites.google.com/view/ai4mathworkshopicml2025/challenge). 
+
 We strongly encourage all participants to concurrently submit their technical reports to the ​**​ICML 2025 AI for Math Workshop​**​.
 
 - Submission Guidelines: https://www.codabench.org/competitions/7925/
