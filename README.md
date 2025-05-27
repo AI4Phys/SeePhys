@@ -19,10 +19,10 @@
 
 Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning](https://arxiv.org/pdf/2505.19099)".
 
-🌟 For more details, please refer to the project page with dataset exploration and visualization tools: [https://github.com/SeePhys/seephys-project](https://github.com/SeePhys/seephys-project).
+🌟 For more details, please refer to the project page with dataset exploration and leadboard: [https://seephys.github.io/](https://github.com/SeePhys/seephys-project).
 
 
-[[🌐 Webpage](https://github.com/SeePhys/seephys-project)] [[📖 Paper](https://arxiv.org/pdf/2403.14624)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://github.com/SeePhys/seephys-project#leaderboard)][[🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)]
+[[🌐 Webpage](https://seephys.github.io/)] [[📖 Paper](http://arxiv.org/abs/2505.19099)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://seephys.github.io/)][[🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)]
 
 
 ## 📖 Outlines
@@ -36,7 +36,7 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 - [🤝 Contributors](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-contributors)
 
 ## 💥 News
-- **[2025.05.27]** 🔥 The [arXiv paper](https://arxiv.org/pdf/2403.14624) is online!
+- **[2025.05.27]** 🔥 The [arXiv paper](http://arxiv.org/abs/2505.19099) is online!
 - **[2025.05.24]** 🚀 We release the ***test*** set without ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys), and the [evaluation code](https://github.com/SeePhys/seephys-project)!
 - **[2025.05.24]** 🔥 We release the evaluation [code](https://github.com/SeePhys/seephys-project) using VLMEvalKit
 - **[2025.05.21]** 🎉 Our SeePhys is officially open for challenges at the [2nd AI for Math Workshop at ICML 2025](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)!
@@ -159,4 +159,6 @@ If you find **SeePhys** useful for your research and applications, please kindly
 Here are the key contributors to this project:
 
 **Kun Xiang**<sup>1</sup>, **Heng Li**<sup>1</sup>, **Terry Jingchen Zhang**<sup>2</sup>, **Yinya Huang**<sup>2</sup>, **Zirong Liu**<sup>1</sup>, **Peixin Qu**<sup>1</sup>, **Jixi He**<sup>1</sup>, **Jiaqi Chen**<sup>4</sup>, **Yu-Jie Yuan**<sup>3</sup>, **Jianhua Han**<sup>3</sup>, **Hang Xu**<sup>3</sup>, **Hanhui Li**<sup>1</sup>, **Mrinmaya Sachan**<sup>2</sup> , **Xiaodan Liang**<sup>1</sup> 
+
+
 <sup>1</sup> Sun Yat-sen University <sup>2</sup> ETH Zurich <sup>3</sup> Huawei Noah's Ark Lab <sup>4</sup> The University of Hong Kong
