@@ -14,7 +14,7 @@
 ![Claude](https://img.shields.io/badge/Model-Claude_3.7_Sonnet-green)
 
 <p align="center">
-    <img src="asserts/logo.png" width="20%"> <br>
+    <img src="assets/logo.png" width="20%"> <br>
 </p>
 
 Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning](https://arxiv.org/pdf/2505.19099)".
@@ -51,25 +51,25 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 **SeePhys** is a **​full spectrum multimodal benchmark** for evaluating physics reasoning across different knowledge levels. 
 
 <p align="center">
-    <img src="asserts/fig1.png" width="100%"> <br>
+    <img src="assets/fig1.png" width="100%"> <br>
 </p>
 
 
 It comprises **2,000 rigorously validated questions** covering a ​​comprehensive range of knoledge levels **from middle school to PhD qualifying exam levels**. These questions span **7 major fields** of both classical and modern physics. To assess the extent to which different models rely on visual information for reasoning, we curate **two subsets with different visual information enrichment** and additionally compile supplementary copies of 2,000 purely visual instances where all problem statements in texts are presented in picture form. Through meticulous selection of **21 diagram types** by domain experts, each problem challenges frontier MLLMs to integrate domain knowledge with visual understanding of physics diagrams (e.g., Feynman diagrams for particle interactions and Circuit diagrams for Electromagnetism).
 <p align="center">
-    <img src="asserts/fig2.png" width="100%"> <br>
+    <img src="assets/fig2.png" width="100%"> <br>
 </p>
 
 
 The figure below showcases examples of ​**​Vision-Essential​**​ and ​**​Vision-Optional​**​ samples. 
 <p align="center">
-    <img src="asserts/fig3.png" width="100%"> <br>
+    <img src="assets/fig3.png" width="100%"> <br>
 </p>
 
 Our experiments reveal that MLLMs encounter significant challenges in solving ​**​Vision-Essential​**​ problems, whereas for ​**​Vision-Optional​**​ problems, even when images only provide supplementary information, they can still enhance the model's problem-solving capabilities.
 
 <p align="center">
-    <img src="asserts/fig4.png" width="100%"> <br>
+    <img src="assets/fig4.png" width="100%"> <br>
 </p>
 With **SeePhys**, we conduct extensive experiments to evaluate 28 leading LLMs and MLLMs such as o4-mini and Gemini-2.5-Pro. The results reveal that even with extensive chain-of-thought, none of the current models could surpass 55\% accuracy. Our analysis reveals that even non-essential diagrams can enhance physics reasoning performance when presented to MLLMs. 
 
@@ -117,7 +117,7 @@ Accuracy scores of MLLMs:
 ## 💪Contributing to our Leaderboard
 
 <p align="center">
-    <img src="asserts/fig5.png" width="100%"> <br>
+    <img src="assets/fig5.png" width="100%"> <br>
 </p>
 
 Our SeePhys is now open for submissions at the ​**​ICML 2025 Challenge on Automated Math Reasoning and Extensions​**​! To evaluate your model, please submit benchmark results to our website following the official [guidelines](https://sites.google.com/view/ai4mathworkshopicml2025/challenge). 
@@ -141,7 +141,7 @@ We have provided the evaluation code using [VLMEvalKit](https://github.com/open-
 
 Examples for problem versions within different subjects, knowledge levels and vision information enrichments.
 <p align="center">
-    <img src="asserts/fig6.png" width="100%"> <br>
+    <img src="assets/fig6.png" width="100%"> <br>
 </p>
 
 ## 📈 Citation
