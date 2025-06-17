@@ -160,7 +160,7 @@ If you find **SeePhys** useful for your research and applications, please kindly
 ## 🤝 Contributors
 Here are the key contributors to this project:
 
-**Kun Xiang**<sup>1</sup>, **Heng Li**<sup>1</sup>, **Terry Jingchen Zhang**<sup>2</sup>, **Yinya Huang**<sup>2</sup>, **Zirong Liu**<sup>1</sup>, **Peixin Qu**<sup>1</sup>, **Jixi He**<sup>1</sup>, **Jiaqi Chen**<sup>4</sup>, **Yu-Jie Yuan**<sup>3</sup>, **Jianhua Han**<sup>3</sup>, **Hang Xu**<sup>3</sup>, **Hanhui Li**<sup>1</sup>, **Mrinmaya Sachan**<sup>2</sup> , **Xiaodan Liang**<sup>1</sup> 
+**Kun Xiang\***<sup>1</sup>, **Heng Li\***<sup>1</sup>, **Terry Jingchen Zhang\***<sup>2</sup>, **Yinya Huang\***<sup>2</sup>, **Zirong Liu**<sup>1</sup>, **Peixin Qu**<sup>1</sup>, **Jixi He**<sup>1</sup>, **Jiaqi Chen**<sup>4</sup>, **Yu-Jie Yuan**<sup>3</sup>, **Jianhua Han**<sup>3</sup>, **Hang Xu**<sup>3</sup>, **Hanhui Li**<sup>1</sup>, **Mrinmaya Sachan**<sup>2</sup> , **Xiaodan Liang**<sup>1</sup> 
 
 
 <sup>1</sup> Sun Yat-sen University <sup>2</sup> ETH Zurich <sup>3</sup> Huawei Noah's Ark Lab <sup>4</sup> The University of Hong Kong
