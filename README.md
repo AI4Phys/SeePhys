@@ -151,7 +151,7 @@ If you find **SeePhys** useful for your research and applications, please kindly
 ```latex
 @article{xiang2025seephys,
   title={SeePhys: Does Seeing Help Thinking?--Benchmarking Vision-Based Physics Reasoning},
-  author={Xiang, Kun and Li, Heng and Zhang, Terry Jingchen and Huang, Yinya and Liu, Zirong and Qu, Peixin and He, Jixi and Chen, Jiaqi and Yuan, Yu-Jie and Han, Jianhua and others},
+  author={Xiang, Kun* and Li, Heng* and Zhang, Terry Jingchen* and Huang, Yinya* and Liu, Zirong and Qu, Peixin and He, Jixi and Chen, Jiaqi and Yuan, Yu-Jie and Han, Jianhua and others},
   journal={arXiv preprint arXiv:2505.19099},
   year={2025}
 }
