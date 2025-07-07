@@ -36,6 +36,7 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 - [🤝 Contributors](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-contributors)
 
 ## 💥 News
+- **[2025.07.07]** 🚀 We release the ***full*** set with ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys)!
 - **[2025.05.27]** 🔥 The [arXiv paper](http://arxiv.org/abs/2505.19099) is online!
 - **[2025.05.24]** 🚀 We release the ***test*** set without ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys), and the [evaluation code](https://github.com/SeePhys/seephys-project)!
 - **[2025.05.24]** 🔥 We release the evaluation [code](https://github.com/SeePhys/seephys-project) using VLMEvalKit
