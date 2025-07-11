@@ -10,7 +10,6 @@ class TaiyiWrapper(BaseAPI):
     def __init__(self,
                  model: str = 'taiyi',
                  retry: int = 5,
-                 wait: int = 5,
                  key: str = None,
                  verbose: bool = False,
                  system_prompt: str = None,
@@ -31,7 +30,7 @@ class TaiyiWrapper(BaseAPI):
         self.key = key
 
         self.timeout = timeout
-        super().__init__(wait=wait, retry=retry, system_prompt=system_prompt, verbose=verbose, **kwargs)
+        super().__init__(retry=retry, system_prompt=system_prompt, verbose=verbose, **kwargs)
         assert url is not None, ('Please set the url ')
         self.url = url
         self.logger.info(f'Using url: {self.url}; API Key: {self.key}')
@@ -62,12 +61,6 @@ class TaiyiWrapper(BaseAPI):
             text = '\n'.join([x['value'] for x in inputs])
             input_msgs.append(dict(role='user', content=text))
         return input_msgs
-
-    def set_dump_image(self, dump_image_func):
-        self.dump_image_func = dump_image_func
-
-    def dump_image(self, line, dataset):
-        return self.dump_image_func(line)
 
     def image_first(self, msgs):
         nr_img = 0

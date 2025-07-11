@@ -1,8 +1,6 @@
 accelerate
-decord; platform_machine != 'arm64'
 dotenv
 einops
-eva-decord; platform_machine == 'arm64'
 # for gemini api
 google-genai
 gradio
@@ -15,7 +13,7 @@ nltk
 numpy
 omegaconf
 openai
-opencv-python>=4.4.0.46
+opencv-python>=4.7.0.72
 openpyxl
 pandas
 pillow
@@ -28,6 +26,7 @@ rich
 sentencepiece
 setuptools
 sty
+sympy
 tabulate
 tiktoken
 timeout-decorator

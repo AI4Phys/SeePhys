@@ -137,8 +137,34 @@ We strongly encourage all participants to concurrently submit their technical re
 ## 🚀 Evaluation with VLMEvalKit
 
 We have provided the evaluation code using [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) for our SeePhys. To ensure fairness in the [challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge), we will release the ground-truth to the public on ​**​July 18th​**​.
+Create the environment:
+```
+cd seephys-project
+pip install -e .
+```
 
 
+Set your API key:
+```
+export OPENAI_API_KEY=
+export OPENAI_API_BASE=
+```
+
+
+Then run script with 8 GPUs:
+```
+#!/bin/bash
+set -x
+export GPU=$(nvidia-smi --list-gpus | wc -l)
+export LMUData=/LMUData
+torchrun --nproc-per-node=8 run.py --model Qwen2.5-VL-7B-Instruct \
+    --data SeePhys\
+    --api-nproc 32 \
+    --work-dir /work_dir\
+    --judge deepseek \
+    --judge-args '{"valid_type": "LLM"}'  \
+    --reuse
+```
 
 ## 📐 Dataset Examples
 

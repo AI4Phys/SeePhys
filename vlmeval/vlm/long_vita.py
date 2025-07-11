@@ -3,7 +3,6 @@ import os
 import math
 import numpy as np
 from PIL import Image
-import decord
 from ..smp import *
 from .base import BaseModel
 from ..dataset import DATASET_TYPE
@@ -469,6 +468,7 @@ class ImageProcessor:
         ]
 
     def save_video_frames(self, vid_path, max_fps=1, num_frames=8):
+        import decord
         vid = decord.VideoReader(vid_path, num_threads=1)
 
         step_size = len(vid) / (num_frames + 1)
@@ -490,9 +490,11 @@ class ImageProcessor:
 
         for im, pth in zip(images, frame_paths):
             im.save(pth)
+
         return frame_paths
 
     def get_video_frames(self, vid_path, max_fps=1, num_frames=8):
+        import decord
         vid = decord.VideoReader(vid_path, num_threads=1)
 
         step_size = len(vid) / (num_frames + 1)
@@ -504,6 +506,7 @@ class ImageProcessor:
 
         images = [vid[i].asnumpy() for i in indices]
         images = [Image.fromarray(arr) for arr in images]
+        print(f"for this video, video duration is {len(vid)/fps}s, get {len(images)} frames for inference")
 
         return images
 
@@ -678,7 +681,7 @@ class LongVITAWrapper(BaseModel):
         model = AutoModelForCausalLM.from_pretrained(
             model_path,
             trust_remote_code=True,
-            device_map="auto",
+            device_map="cuda",
             torch_dtype=torch.bfloat16,
             attn_implementation="flash_attention_2",
         ).eval()

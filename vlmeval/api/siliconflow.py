@@ -45,7 +45,6 @@ class SiliconFlowAPI(BaseAPI):
         self,
         model: str = "deepseek-ai/DeepSeek-V2.5",
         retry: int = 5,
-        wait: int = 5,
         key: str = None,
         api_base: str = API_BASE,
         verbose: bool = True,
@@ -77,7 +76,6 @@ class SiliconFlowAPI(BaseAPI):
         headers["Authorization"] = headers["Authorization"].format(self.key)
         self.headers = headers
         super().__init__(
-            wait=wait,
             retry=retry,
             system_prompt=system_prompt,
             verbose=verbose,
@@ -92,9 +90,12 @@ class SiliconFlowAPI(BaseAPI):
         for msg in msgs_raw:
             if msg["type"] == "image" and not image_b64:
                 image_b64 = encode_image(msg["value"])
-                message["content"].append(
-                    {"image_url": {"url": image_b64}, "type": "image_url"}
-                )
+                message["content"].append({
+                    "image_url": {
+                        "url": f"data:image/png;base64,{image_b64}"
+                    },
+                    "type": "image_url"
+                })
             elif msg["type"] == "text":
                 message["content"].append({"text": msg["value"], "type": "text"})
 
