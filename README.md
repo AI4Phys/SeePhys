@@ -36,6 +36,8 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 - [🤝 Contributors](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-contributors)
 
 ## 💥 News
+- **[2025.07.11]** 💥 Skywork-R1V3 Outperforms Qwen2.5-VL-72B with 32.0% on SeePhys! Learn more at the [Skywork-R1V3 blog](https://arxiv.org/pdf/2507.06167)
+- **[2025.07.11]** 🏆 The [competition results](https://seephys.github.io/) of 2nd AI for Math Workshop at ICML 2025 have been announced, with the champion achieving the highest accuracy of **60.56%**!
 - **[2025.07.07]** 🚀 We release the ***full*** set with ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys)!
 - **[2025.05.27]** 🔥 The [arXiv paper](http://arxiv.org/abs/2505.19099) is online!
 - **[2025.05.24]** 🚀 We release the ***test*** set without ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys), and the [evaluation code](https://github.com/SeePhys/seephys-project)!
