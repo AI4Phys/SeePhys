@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="MathVista, Math Vista">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> SeePhys: Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning</title>
+
+  <link rel="icon" href="./static/images/logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="stylesheet" href="./static/css/leaderboard.css"> -->
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <!-- <script src="./static/js/explorer-index.js"></script> -->
+  <script src="./static/js/question_card.js"></script>
+
+  <!-- <script src="./static/js/leaderboard_testmini.js"></script>   -->
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/logo.png" style="width:1.5em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista" style="vertical-align: middle">SeePhys</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning
+            <!-- <br> -->
+            <!-- with GPT-4V, Bard, and Other Large Multimodal Models -->
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Kun Xiang*</a><sup style="color:#3003e6;">1</sup>,</span>
+            <span class="author-block">
+              <a href="">Heng Li*</a><sup style="color:#3003e6;">1</sup>,</span>
+            <span class="author-block">
+              <a href="">Terry Jingchen Zhang*</a><sup style="color:#ed4b82;">2</sup>,</span>
+            <span class="author-block">
+              <a href="https://eleanor-h.github.io/">Yinya Huang*</a><sup style="color:#ed4b82;">2</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/Nosiopd">Zirong Liu</a><sup style="color:#3003e6;">1</sup>,</span>
+            <span class="author-block">
+              <a href="">Peixin Qu</a><sup style="color:#3003e6;">1</sup>,</span>
+            <span class="author-block">
+              <a href="">Jixi He</a><sup style="color:#3003e6;">1</sup>,</span>
+            <span class="author-block">
+              <a href="">Jiaqi Chen</a><sup style="color:#18dbaa;">4</sup>,</span>
+            <span class="author-block">
+              <a href="">Yu-Jie Yuan</a><sup style="color:#ea1ed6;">3</sup>,</span>   
+            <span class="author-block">
+              <a href="">Jianhua Han</a><sup style="color:#ea1ed6;">3</sup>,</span>  
+            <span class="author-block">
+              <a href="">Hang Xu</a><sup style="color:#ea1ed6;">3</sup>,</span>    
+            <span class="author-block">
+            <a href="">Hanhui Li</a><sup style="color:#3003e6;">1</sup>,</span>  
+            <span class="author-block">
+              <a href="">Mrinmaya Sachan</a><sup style="color:#ed4b82;">2</sup>,</span>                               
+            <span class="author-block">
+              <a href="https://lemondan.github.io/">Xiaodan Liang</a><sup style="color:#3003e6">1†</sup>
+            </span>            
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup style="color:#3003e6;">1</sup>Sun Yat-sen University,</span>
+            <span class="author-block"><sup style="color:#ed4b82">2</sup>ETH Zurich,</span><br>
+            <span class="author-block"><sup style="color:#ea1ed6">3</sup>Huawei Noah’s Ark Lab,</span>
+            <span class="author-block"><sup style="color:#18dbaa">4</sup>The University of Hong Kong</span><br>
+          </div>
+        
+         
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2505.19099"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+
+              <span class="link-block">
+                <a href="https://github.com/SeePhys/seephys-project"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <!-- Dataset Link (GitHub). -->
+                            
+              <!-- TODO: Dataset Link (HuggingFace). -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/SeePhys/SeePhys"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+
+
+              <span class="link-block">
+                <a href="https://sites.google.com/view/ai4mathworkshopicml2025/challenge"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:18px">🚀</p>
+                  </span>
+                  <span>Challenge</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://x.com/YinyaHuang"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:18px">🌐</p>
+                  </span>
+                  <span>Twitter</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://bsky.app/profile/kunxiang.bsky.social/post/3lq662rrfav2a"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:18px">🦋</p>
+                  </span>
+                  <span>Bluesky</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <span class="mathvista">SeePhys</span>, a large-scale multimodal benchmark for LLM reasoning grounded in physics questions ranging from middle school to PhD qualifying exams. The benchmark covers 7 fundamental domains spanning the physics discipline, incorporating 21 categories of highly heterogeneous diagrams. In contrast to prior works where visual elements mainly serve auxiliary purposes, our benchmark features a substantial proportion of vision-essential problems (75%) that mandate visual information extraction for correct solutions. Through extensive evaluation, we observe that even the most advanced visual reasoning models (e.g., Gemini-2.5-pro and o4-mini) achieve sub-60% accuracy on our benchmark. These results reveal fundamental challenges in current large language models' visual understanding capabilities, particularly in: (i) establishing rigorous coupling between diagram interpretation and physics reasoning, and (ii) overcoming their persistent reliance on textual cues as cognitive shortcuts.
+          </p>          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- 2nd AI for Math Workshop -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">2nd AI for Math Workshop at ICML 2025</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our SeePhys is now open for submissions at the <strong>ICML 2025 Challenge on Automated Math Reasoning and Extensions</strong>! To evaluate your model, please submit benchmark results to our website following the official <a href="https://sites.google.com/view/ai4mathworkshopicml2025/challenge">guidelines</a>.
+          </p>
+          <p>
+            We strongly encourage all participants to concurrently submit their technical reports to the <strong>ICML 2025 AI for Math Workshop</strong>.
+          </p>
+          <ul>
+            <li><strong>Submission Guidelines:</strong> <a href="https://www.codabench.org/competitions/7925/">https://www.codabench.org/competitions/7925/</a></li>
+            <li><strong>Challenge Details:</strong> <a href="https://sites.google.com/view/ai4mathworkshopicml2025/challenge">https://sites.google.com/view/ai4mathworkshopicml2025/challenge</a></li>
+            <li><strong>Workshop Details:</strong> <a href="https://sites.google.com/view/ai4mathworkshopicml2025/home">https://sites.google.com/view/ai4mathworkshopicml2025/home</a></li>
+          </ul>
+        </div>
+        <h2 class="title is-2 mathvista">
+         <img src="static/images/challenge.png" alt="SeePhys" width="100%"/>
+        </h2>
+
+<h2 class="title is-3">Accuracy scores of participants:</h2>
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Participants</th>
+      <th>Public (mini)</th>
+      <th>Private (overall)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td><strong><span style="color: red;">pwrtasoa🥇</span></strong></td>
+      <td><strong>66.00</strong></td>
+      <td><strong>60.56</strong></td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td><strong><span style="color: red;">zhaojiahao🥈</span></strong></td>
+      <td><strong>62.00</strong></td>
+      <td><strong>60.28</strong></td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td><strong><span style="color: red;">dreamwave🥉</span></strong></td>
+      <td><strong>66.00</strong></td>
+      <td><strong>58.94</strong></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>sjbzmn</td>
+      <td>55.50</td>
+      <td>57.83</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>sparsh35</td>
+      <td>59.50</td>
+      <td>57.78</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>obiwan</td>
+      <td>60.50</td>
+      <td>55.00</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>phaedrus</td>
+      <td>56.50</td>
+      <td>54.22</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>skhakim</td>
+      <td>56.00</td>
+      <td>50.50</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>eonia</td>
+      <td>56.50</td>
+      <td>48.78</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>stackdreamer</td>
+      <td>51.00</td>
+      <td>48.28</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>ruizheng</td>
+      <td>39.00</td>
+      <td>42.50</td>
+    </tr>
+    <!-- <tr>
+      <td>12</td>
+      <td>charmier</td>
+      <td>58.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>gautam</td>
+      <td>57.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>yangbigmn</td>
+      <td>57.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>prmbiy</td>
+      <td>55.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>anonymous1230</td>
+      <td>52.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>bhaskarsteve</td>
+      <td>51.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>baraa</td>
+      <td>50.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>lakshpatel</td>
+      <td>49.50</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>mao_xhichigan</td>
+      <td>40.50</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>sky_sky</td>
+      <td>31.50</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>sss_ss</td>
+      <td>28.50</td>
+      <td>0.00</td>
+    </tr> -->
+  </tbody>
+</table>
+       
+
+      </div>
+    </div>
+    <!--/ 2nd AI for Math Workshop -->
+  </div>
+</section>
+
+
+<!-- ENVIRONMENT SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+
+  <h1 class="title is-1 mathvista" id="leaderboard">
+    <img src="static/images/logo.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mathvista" style="vertical-align: middle">Leaderboard on SeePhys(2000 samples)</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+
+
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Accuracy scores of LLMs:</h2>
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>LLMs</th>
+              <th>Mid</th>
+              <th>High</th>
+              <th>BO</th>
+              <th>AO</th>
+              <th>UG</th>
+              <th>SUG</th>
+              <th>MA</th>
+              <th>PhD</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1</strong></td>
+              <td><strong><span style="color: red;">DeepSeek-R1🥇</span></strong></td>
+              <td><strong>54.9</strong></td>
+              <td><strong>46.9</strong></td>
+              <td><strong>47.7</strong></td>
+              <td><strong>31.9</strong></td>
+              <td><strong>49.9</strong></td>
+              <td><strong>34.2</strong></td>
+              <td><strong>49.0</strong></td>
+              <td><strong>41.2</strong></td>
+              <td><strong>42.2</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td><strong><span style="color: red;">DeepSeek-V3🥈</span></strong></td>
+              <td><u>53.9</u></td>
+              <td><u>42.6</u></td>
+              <td><u>36.4</u></td>
+              <td><u>22.8</u></td>
+              <td><u>45.4</u></td>
+              <td><u>29.7</u></td>
+              <td><u>35.9</u></td>
+              <td><u>37.5</u></td>
+              <td><u>36.0</u></td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td><strong><span style="color: red;">Qwen3-235B-A22B🥉</span></strong></td>
+              <td>47.1</td>
+              <td>33.7</td>
+              <td>31.8</td>
+              <td>20.4</td>
+              <td>41.2</td>
+              <td>25.1</td>
+              <td>31.7</td>
+              <td>30.7</td>
+              <td>31.1</td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td><strong>QwQ-32B</strong></td>
+              <td>47.1</td>
+              <td>42.2</td>
+              <td>44.9</td>
+              <td>15.5</td>
+              <td>40.0</td>
+              <td>20.1</td>
+              <td>32.4</td>
+              <td>24.0</td>
+              <td>29.7</td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td><strong>R1-Distilled-Llama-70B</strong></td>
+              <td>48.0</td>
+              <td>41.4</td>
+              <td>34.6</td>
+              <td>14.2</td>
+              <td>31.5</td>
+              <td>16.0</td>
+              <td>28.9</td>
+              <td>25.9</td>
+              <td>26.9</td>
+            </tr>
+            <tr>
+              <td><strong>6</strong></td>
+              <td><strong>Llama-4-Scout-17B</strong></td>
+              <td>48.0</td>
+              <td>36.5</td>
+              <td>31.8</td>
+              <td>11.3</td>
+              <td>28.5</td>
+              <td>14.2</td>
+              <td>28.3</td>
+              <td>26.1</td>
+              <td>24.8</td>
+            </tr>
+            <tr>
+              <td><strong>7</strong></td>
+              <td><strong>Qwen2.5-72B</strong></td>
+              <td>41.2</td>
+              <td>40.2</td>
+              <td>25.2</td>
+              <td>8.2</td>
+              <td>26.8</td>
+              <td>12.8</td>
+              <td>18.6</td>
+              <td>17.8</td>
+              <td>21.1</td>
+            </tr>
+            <tr>
+              <td><strong>8</strong></td>
+              <td><strong>Gemma3-27B</strong></td>
+              <td>21.6</td>
+              <td>36.5</td>
+              <td>30.8</td>
+              <td>5.1</td>
+              <td>23.1</td>
+              <td>9.1</td>
+              <td>15.2</td>
+              <td>11.9</td>
+              <td>16.9</td>
+            </tr>
+            <tr>
+              <td><strong>9</strong></td>
+              <td><strong>Llama-3.1-8B</strong></td>
+              <td>26.5</td>
+              <td>15.7</td>
+              <td>17.8</td>
+              <td>3.9</td>
+              <td>7.6</td>
+              <td>3.7</td>
+              <td>10.3</td>
+              <td>8.4</td>
+              <td>9.2</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+  
+  
+          <div class="column is-four-fifths">
+          <h2 class="title is-3">Accuracy scores of MLLMs:</h2>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>MLLMs</th>
+                <th>Mid</th>
+                <th>High</th>
+                <th>BO</th>
+                <th>AO</th>
+                <th>UG</th>
+                <th>SUG</th>
+                <th>MA</th>
+                <th>PhD</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1</strong></td>
+                <td><strong><span style="color: red;">Gemini-2.5-Pro🥇</span></strong></td>
+                <td><u>69.6</u></td>
+                <td><strong>66.7</strong></td>
+                <td><strong>64.5</strong></td>
+                <td><strong>46.7</strong></td>
+                <td><strong>64.2</strong></td>
+                <td><strong>50.2</strong></td>
+                <td><strong>53.8</strong></td>
+                <td><u>44.2</u></td>
+                <td><strong>54.9</strong></td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td><strong><span style="color: red;">o4-mini🥈</span></strong></td>
+                <td>66.7</td>
+                <td><u>61.8</u></td>
+                <td><u>56.1</u></td>
+                <td>41.8</td>
+                <td>53.8</td>
+                <td><u>45.7</u></td>
+                <td>51.0</td>
+                <td><strong>53.4</strong></td>
+                <td><u>51.9</u></td>
+              </tr>
+              <tr>
+                <td><strong>3</strong></td>
+                <td><strong><span style="color: red;">grok4*🥉</span></strong></td>
+                <td>62.5</td>
+                <td>38.9</td>
+                <td>38.5</td>
+                <td>54.3</td>
+                <td>54.8</td>
+                <td>42.1</td>
+                <td>57.1</td>
+                <td>44.7</td>
+                <td>49.0</td>
+              </tr>
+              <tr>
+                <td><strong>4</strong></td>
+                <td><strong>o1</strong></td>
+                <td>60.8</td>
+                <td>56.6</td>
+                <td>50.5</td>
+                <td>32.5</td>
+                <td><u>54.4</u></td>
+                <td>40.6</td>
+                <td><u>52.4</u></td>
+                <td>40.4</td>
+                <td>45.6</td>
+              </tr>
+              <tr>
+                <td><strong>5</strong></td>
+                <td><strong>Doubao-1.5-pro</strong></td>
+                <td><strong>70.6</strong></td>
+                <td>58.2</td>
+                <td>49.5</td>
+                <td>29.2</td>
+                <td>56.6</td>
+                <td>34.7</td>
+                <td>40.7</td>
+                <td>37.5</td>
+                <td>43.9</td>
+              </tr>
+              <tr>
+                <td><strong>6</strong></td>
+                <td><strong>o3-mini</strong></td>
+                <td>47.1</td>
+                <td>46.2</td>
+                <td>39.3</td>
+                <td>28.3</td>
+                <td>47.0</td>
+                <td>36.1</td>
+                <td>48.3</td>
+                <td>42.3</td>
+                <td>40.3</td>
+              </tr>
+              <tr>
+                <td><strong>7</strong></td>
+                <td><strong>GPT-4.1</strong></td>
+                <td>51.0</td>
+                <td>52.6</td>
+                <td>41.1</td>
+                <td>17.0</td>
+                <td>39.7</td>
+                <td>31.1</td>
+                <td>42.1</td>
+                <td>35.6</td>
+                <td>35.3</td>
+              </tr>
+              <tr>
+                <td><strong>8</strong></td>
+                <td><strong>Claude-3.7-Sonnet</strong></td>
+                <td>52.9</td>
+                <td>51.8</td>
+                <td>43.0</td>
+                <td>16.7</td>
+                <td>41.4</td>
+                <td>26.5</td>
+                <td>33.8</td>
+                <td>32.4</td>
+                <td>34.6</td>
+              </tr>
+              <tr>
+                <td><strong>9</strong></td>
+                <td><strong>Skywork-R1V3-38B</strong></td>
+                <td>53.9</td>
+                <td>43.8</td>
+                <td>40.2</td>
+                <td>19.7</td>
+                <td>39.7</td>
+                <td>24.2</td>
+                <td>30.3</td>
+                <td>28.3</td>
+                <td>32.0</td>
+              </tr>
+              <tr>
+                <td><strong>10</strong></td>
+                <td><strong>Qwen2.5-VL-72B-Inst</strong></td>
+                <td>61.8</td>
+                <td>42.2</td>
+                <td>29.0</td>
+                <td>10.4</td>
+                <td>29.9</td>
+                <td>14.6</td>
+                <td>18.6</td>
+                <td>19.4</td>
+                <td>24.2</td>
+              </tr>
+              <tr>
+                <td><strong>11</strong></td>
+                <td><strong>QVQ-72b-preview</strong></td>
+                <td>38.2</td>
+                <td>36.5</td>
+                <td>30.8</td>
+                <td>11.3</td>
+                <td>25.9</td>
+                <td>14.2</td>
+                <td>26.2</td>
+                <td>20.2</td>
+                <td>22.5</td>
+              </tr>
+              <tr>
+                <td><strong>12</strong></td>
+                <td><strong>GPT-4o</strong></td>
+                <td>37.3</td>
+                <td>39.0</td>
+                <td>34.6</td>
+                <td>7.5</td>
+                <td>23.4</td>
+                <td>15.5</td>
+                <td>24.1</td>
+                <td>21.8</td>
+                <td>21.9</td>
+              </tr>
+              <tr>
+                <td><strong>13</strong></td>
+                <td><strong>Llama-3.2-90B-Vision</strong></td>
+                <td>21.6</td>
+                <td>25.7</td>
+                <td>22.4</td>
+                <td>3.9</td>
+                <td>9.3</td>
+                <td>10.0</td>
+                <td>12.4</td>
+                <td>8.9</td>
+                <td>11.7</td>
+              </tr>
+              <tr>
+                <td><strong>14</strong></td>
+                <td><strong>Qwen2.5-VL-7B-Inst</strong></td>
+                <td>39.2</td>
+                <td>25.3</td>
+                <td>21.5</td>
+                <td>4.2</td>
+                <td>8.7</td>
+                <td>5.9</td>
+                <td>10.3</td>
+                <td>7.3</td>
+                <td>11.6</td>
+              </tr>
+              <tr>
+                <td><strong>15</strong></td>
+                <td><strong>Qwen2.5-VL-3B-Inst</strong></td>
+                <td>30.4</td>
+                <td>21.3</td>
+                <td>13.1</td>
+                <td>2.9</td>
+                <td>10.4</td>
+                <td>7.3</td>
+                <td>6.2</td>
+                <td>6.2</td>
+                <td>9.8</td>
+              </tr>
+              <tr>
+                <td><strong>16</strong></td>
+                <td><strong>Qwen2-VL-7B-Inst</strong></td>
+                <td>24.5</td>
+                <td>17.3</td>
+                <td>14.0</td>
+                <td>4.4</td>
+                <td>8.5</td>
+                <td>4.6</td>
+                <td>10.3</td>
+                <td>7.0</td>
+                <td>9.2</td>
+              </tr>
+              <tr>
+                <td><strong>17</strong></td>
+                <td><strong>LLaVA-NeXT-7B</strong></td>
+                <td>14.5</td>
+                <td>12.7</td>
+                <td>11.2</td>
+                <td>5.5</td>
+                <td>13.2</td>
+                <td>8.2</td>
+                <td>11.0</td>
+                <td>9.4</td>
+                <td>8.7</td>
+              </tr>
+              <tr>
+                <td><strong>18</strong></td>
+                <td><strong>Llama3.2-11B-Vision</strong></td>
+                <td>23.5</td>
+                <td>18.5</td>
+                <td>14.0</td>
+                <td>4.2</td>
+                <td>5.4</td>
+                <td>3.7</td>
+                <td>4.8</td>
+                <td>7.5</td>
+                <td>8.3</td>
+              </tr>
+              <tr>
+                <td><strong>19</strong></td>
+                <td><strong>Phi-4-multimodal</strong></td>
+                <td>20.6</td>
+                <td>12.4</td>
+                <td>12.1</td>
+                <td>4.4</td>
+                <td>7.0</td>
+                <td>5.0</td>
+                <td>8.3</td>
+                <td>4.9</td>
+                <td>7.6</td>
+              </tr>
+              <tr>
+                <td><strong>20</strong></td>
+                <td><strong>InternVL2.5-8B</strong></td>
+                <td>17.6</td>
+                <td>12.4</td>
+                <td>9.3</td>
+                <td>2.9</td>
+                <td>5.6</td>
+                <td>3.2</td>
+                <td>4.1</td>
+                <td>5.1</td>
+                <td>6.2</td>
+              </tr>
+              <tr>
+                <td><strong>21</strong></td>
+                <td><strong>LLaVA-OneVision-7B</strong></td>
+                <td>20.6</td>
+                <td>10.8</td>
+                <td>12.1</td>
+                <td>2.7</td>
+                <td>5.4</td>
+                <td>2.3</td>
+                <td>6.2</td>
+                <td>5.4</td>
+                <td>6.1</td>
+              </tr>
+            </tbody>
+            <caption>
+              <p>
+                Accuracy (%) of different LLMs/MLLMs by knowledge level.
+                Mid: Middle school;
+                High: High school;
+                BO: Beginner Olympiad;
+                AO: Advanced Olympiad;
+                UG: Undergraduate;
+                SUG: Senior undergraduate;
+                MA: Master's;
+                PhD: PhD qualifying exams.
+                The highest and second-highest scores in each section are <b>bolded</b> and <span class="underlined-text">underscored</span>, respectively.
+                <br>*Tested on mini subset (200 samples)
+              </p>
+            </caption>
+          </table>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <!-- <h1 class="title is-1 mathvista"><img src="static/images/mathverse.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
+  <h1 class="title is-1 mathvista">
+    <img src="static/images/logo.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mathvista" style="vertical-align: middle">SeePhys Dataset</span>
+  </h1>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="static/images/overview.png" alt="SeePhys" width="100%"/>
+            <p> Overview of <b>SeePhys</b>. It encompasses 7 core physics domains and 21 diagram types,
+              spanning the full knowledge spectrum from middle school to PhD qualifying exams levels. 
+          </div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+          <span class="mathvista">SeePhys</span> comprises <b>2,000 rigorously validated questions</b> covering a ​​comprehensive range of knoledge levels <b>from middle school to PhD qualifying exam levels</b>. These questions span <b>7 major fields</b> of both classical and modern physics. To assess the extent to which different models rely on visual information for reasoning, we curate <b>two subsets with different visual information enrichment</b> and additionally compile supplementary copies of 2,000 purely visual instances where all problem statements in texts are presented in picture form. Through meticulous selection of <b>21 diagram types</b> by domain experts, each problem challenges frontier MLLMs to integrate domain knowledge with visual understanding of physics diagrams (e.g., Feynman diagrams for particle interactions and Circuit diagrams for Electromagnetism).
+          </p>
+          <p>
+           
+            You can download the dataset on <a href="https://huggingface.co/datasets/SeePhys/SeePhys" target="_blank">Hugging Face Dataset</a>.
+          </p>
+          <!-- <div id="results-carousel" class="carousel results-carousel">
+          
+        </div> -->
+        </div>
+      </div> 
+      </div>
+        
+
+    <span style="margin:25pt">
+    </span>
+
+    <!-- <div class="columns is-centered m-6"> -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset statistics</h2>
+        <div class="content has-text-justified">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics.png" alt="SeePhys"  width="20%"/>
+              <img src="static/images/sankey.png" alt="SeePhys"  width="70%"/>
+              <p> The statistics of <img src="static/images/logo.png" style="width:2.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">SeePhys</span> dataset. </p>
+            </div>
+          </div>
+        <p> 
+          <img src="static/images/logo.png" style="width:2.0em;vertical-align: middle" alt="Logo"/>
+          The above figure shows in detail the statistics of our <span class="mathvista">SeePhys</span>. The questions span 7 core physics fields and are stratified across 8 knowledge levels from middle school to PhD qualifying exams. Notably, 18.6% of problems target PhD-level reasoning, while 22.6% represent advanced Olympiad challenges. The benchmark emphasizes multimodal reasoning: 75% of questions are Vision-Essential, which necessarily requires diagram interpretation for solving (e.g., analyzing Feynman diagrams), while 25% are Vision-Optional, where visuals supplement text. Questions are language-balanced (1,039 English vs. 961 Chinese) and 88% have multi-step reasoning annotations, validated via expert annotation. Visual diversity is ensured through 21 diagram types (e.g., circuit schematics, free-body diagrams), curated by domain experts. The dataset's composition supports granular evaluation of MLLMs' physics understanding across textual, visual, and reasoning dimensions.
+        </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
+    
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Dataset Examples</h2>
+        <!-- <p>Examples in <img src="static/images/logo.png" style="width:2.0em;vertical-align: middle" alt="Logo"/>
+          <span class="mathvista">SeePhys</span></p> -->
+
+
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/comparison.png" alt="" width="90%"/>
+              <p>Examples of Vision-Optional/Vision-Essential questions. In Vision-Optional samples, texts provide sufficient visual descriptions (e.g., graphical attributes and spatial relationships) to help respondents with illustration. In Essential samples, images contain indispensable problem-solving information, such as numerical values for key variables and unspecified topological structures.</p>
+            </div>
+          </div>          
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/data_example.png" alt="" width="100%"/>
+              <p>Cases of our <span class="mathvista">SeePhys</span></p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/vision_only/1.png" alt="SeePhys"  width="40%"/>
+              <img src="static/images/vision_only/2.png" alt="SeePhys"  width="29%"/>
+              <img src="static/images/vision_only/3.png" alt="SeePhys"  width="29%"/>
+              <p>Cases of pure multimodal subset.</p>
+            </div>
+          </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+
+  <h1 class="title is-1 mathvista" id="leaderboard">
+    <img src="static/images/logo.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mathvista" style="vertical-align: middle">Experiment Results</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Results on Existing Foundation Models</h2>
+        <!-- <p>One example for each reasoning skill required in <span class="mathvista">MathVista</span></p> -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="static/images/sensitivity.png" alt="" width="100%"/>
+            <p>The sensitivity of models to different diagram types under TV/TC/TO/VO settings.</p>
+          </div>
+          </div>
+          <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="static/images/models_diff.png" alt="" width="100%"/>
+            <p>Error patterns comparison of o4-mini, Gemini-2.5-Pro and Qwen2.5-VL-3B. We identify
+              the following error patterns in the models’ outputs: VM: Visual Misinterpretation; TM: Text Mis-
+              interpretation; MF: Modeling Flaws; FA: False Assumption; NM: Numerical Miscalculations; OS:
+              Oversimplification; SM: Summarization Mistakes; OT: Overthinking; RO: Repetitive Output</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Error Analysis Examples</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/0.png" alt="" width="100%"/>
+              <p>Examples of primary error patterns.</p>
+            </div>
+          </div>
+          <!-- <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/1.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/2.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/3.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/4.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/5.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/6.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/7.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/8.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/9.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/10.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/11.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/12.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/13.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/14.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/15.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/16.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/17.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/18.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/19.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/cases/20.png" alt="" width="60%"/>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIBTEX SECTION -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>
+      @article{xiang2025seephys,
+        title={SeePhys: Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning},
+        author={Kun Xiang, Heng Li, Terry Jingchen Zhang, Yinya Huang, Zirong Liu, Peixin Qu, Jixi He, Jiaqi Chen, Yu-Jie Yuan, Jianhua Han, Hang Xu, Hanhui Li, Mrinmaya Sachan, Xiaodan Liang},
+        journal={arXiv preprint arXiv:2505.19099},
+        year={2025}
+      }
+    </code></pre>
+  </div>
+</section>
+
+
+<!-- COLLABORATORS SECTION -->
+<section>
+  <div class="section" id="org-banners" style="display:flex">
+   <a href="https://www.sysu.edu.en/" target="_blank" rel="external">
+        <div id="logo"><img src="static/images/collaborators/logo_sysu.png" style="width:9.0em;vertical-align: middle"></div>
+    </a>
+    &emsp;&emsp;
+    <a href="https://ethz.ch/en.html" target="_blank" rel="external">
+        <div id="logo"><img src="static/images/collaborators/eth_logo.png" style="width:18.0em;vertical-align: middle"></div>
+    </a>     
+    &emsp;&emsp;
+    <a href="https://www.noahlab.com.hk/" target="_blank" rel="external">
+      <div id="logo"><img src="static/images/collaborators/huawei noah.png" style="width:5.0em;vertical-align: middle"></div>
+    </a>   
+    &emsp;&emsp;
+    <a href="https://hku.hk/" target="_blank" rel="external">
+        <div id="logo"><img src="static/images/collaborators/hku-logo.png" style="width:16.0em;vertical-align: middle"></div>
+    </a>  
+  </div>
+</section>
+
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://fveler.github.io/">FVELer</a>, <a href="https://mathverse-cuhk.github.io/">MathVerse</a>, <a href="https://mathvista.github.io/">MathVista</a>, and <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
+</body>
+</html>
