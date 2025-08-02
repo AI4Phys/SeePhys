@@ -19,29 +19,29 @@
 
 Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning](https://arxiv.org/pdf/2505.19099)".
 
-🌟 For more details, please refer to the project page with dataset exploration and leadboard: [https://seephys.github.io/](https://github.com/SeePhys/seephys-project).
+🌟 For more details, please refer to the project page with dataset exploration and leadboard: [SeePhys Webpage](https://ai4phys.github.io/SeePhys/).
 
 
-[[🌐 Webpage](https://seephys.github.io/)] [[📖 Paper](http://arxiv.org/abs/2505.19099)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://seephys.github.io/)][[🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)]
+[[🌐 Webpage](https://ai4phys.github.io/SeePhys)] [[📖 Paper](http://arxiv.org/abs/2505.19099)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/SeePhys/SeePhys)] [[🏆 Leaderboard](https://ai4phys.github.io/SeePhys)][[🎉Challenge](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)]
 
 
 ## 📖 Outlines
-- [💥 News ](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-news)
-- [👀 About SeePhys](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-about-seephys)
-- [🏆 Leaderboard ](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-leaderboard-on-the-benchmark-2000-samples)
-- 💪 [ Contributing to our Leaderboard](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#contributing-to-the-our-leaderboard)
-- [🚀 Evaluation with VLMEvalKit](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-evaluation-with-vlmevalkit)
-- [📐 Dataset Examples](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-dataset-examples)
-- [📈 Citation](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-citation)
-- [🤝 Contributors](https://github.com/SeePhys/seephys-project?tab=readme-ov-file#-contributors)
+- [💥 News ](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-news)
+- [👀 About SeePhys](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-about-seephys)
+- [🏆 Leaderboard ](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-leaderboard-on-the-benchmark-2000-samples)
+- 💪 [ Contributing to our Leaderboard](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#contributing-to-the-our-leaderboard)
+- [🚀 Evaluation with VLMEvalKit](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-evaluation-with-vlmevalkit)
+- [📐 Dataset Examples](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-dataset-examples)
+- [📈 Citation](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-citation)
+- [🤝 Contributors](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-contributors)
 
 ## 💥 News
 - **[2025.07.11]** 💥 Skywork-R1V3 Outperforms Qwen2.5-VL-72B with 32.0% on SeePhys! Learn more at the [Skywork-R1V3 blog](https://arxiv.org/pdf/2507.06167)
 - **[2025.07.11]** 🏆 The [competition results](https://seephys.github.io/) of 2nd AI for Math Workshop at ICML 2025 have been announced, with the champion achieving the highest accuracy of **60.56%**!
 - **[2025.07.07]** 🚀 We release the ***full*** set with ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys)!
 - **[2025.05.27]** 🔥 The [arXiv paper](http://arxiv.org/abs/2505.19099) is online!
-- **[2025.05.24]** 🚀 We release the ***test*** set without ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys), and the [evaluation code](https://github.com/SeePhys/seephys-project)!
-- **[2025.05.24]** 🔥 We release the evaluation [code](https://github.com/SeePhys/seephys-project) using VLMEvalKit
+- **[2025.05.24]** 🚀 We release the ***test*** set without ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys), and the [evaluation code](https://github.com/AI4Phys/SeePhys)!
+- **[2025.05.24]** 🔥 We release the evaluation [code](https://github.com/AI4Phys/SeePhys) using VLMEvalKit
 - **[2025.05.21]** 🎉 Our SeePhys is officially open for challenges at the [2nd AI for Math Workshop at ICML 2025](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)!
 
 
@@ -180,7 +180,7 @@ If you find **SeePhys** useful for your research and applications, please kindly
 ```latex
 @article{xiang2025seephys,
   title={SeePhys: Does Seeing Help Thinking?--Benchmarking Vision-Based Physics Reasoning},
-  author={Xiang*, Kun and Li*, Heng and Zhang*, Terry Jingchen and Huang*, Yinya and Liu, Zirong and Qu, Peixin and He, Jixi and Chen, Jiaqi and Yuan, Yu-Jie and Han, Jianhua and others},
+  author={Kun Xiang*, Heng Li*, Terry Jingchen Zhang*, Yinya Huang*, Zirong Liu, Peixin Qu, Jixi He, Jiaqi Chen, Yu-Jie Yuan, Jianhua Han, Hang Xu, Hanhui Li, Mrinmaya Sachan, Xiaodan Liang},
   journal={arXiv preprint arXiv:2505.19099},
   year={2025}
 }
