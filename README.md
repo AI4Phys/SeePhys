@@ -36,6 +36,7 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 - [🤝 Contributors](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-contributors)
 
 ## 💥 News
+- **[2025.08.11]** 🔥 GPT-5 (high) now achieves a new SOTA with **63.2% accuracy**, surpassing Gemini 2.5 Pro by **8.3%**!
 - **[2025.08.11]** 🔥 We have released the performance of human experts, surpassing Gemini 2.5 Pro by **32.4%**!
 - **[2025.07.11]** 💥 Skywork-R1V3 Outperforms Qwen2.5-VL-72B with 32.0% on SeePhys! Learn more at the [Skywork-R1V3 blog](https://arxiv.org/pdf/2507.06167)
 - **[2025.07.11]** 🏆 The [competition results](https://seephys.github.io/) of 2nd AI for Math Workshop at ICML 2025 have been announced, with the champion achieving the highest accuracy of **60.56%**!
@@ -100,10 +101,11 @@ Accuracy scores of MLLMs:
 | #      | MLLMs                    | Mid         | High        | BO          | AO       | UG          | SUG         | MA          | PhD         | Total       |
 | ------ | ------------------------ | ----------- | ----------- | ----------- | -------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | **1** | **Human Expert🥇**           | **100.0**    | **94.4**    | **92.3**    | **71.7**    | **92.9**    | **94.7**    | **100.0**    | **83.0**    | **86.5**    |
-| **2**  | **Gemini-2.5-Pro🥇**      | <u>69.6</u> | **66.7**    | **64.5**    | **46.7** | **64.2**    | **50.2**    | **53.8**    | <u>44.2</u> | **54.9**    |
-| **3**  | **o4-mini🥈**             | 66.7        | <u>61.8</u> | <u>56.1</u> | 41.8     | 53.8        | <u>45.7</u> | 51.0        | **53.4**    | <u>51.9</u> |
-| **4**  | **o1🥉**                  | 60.8        | 56.6        | 50.5        | 32.5     | <u>54.4</u> | 40.6        | <u>52.4</u> | 40.4        | 45.6        |
-| **5**  | **Doubao-1.5-pro**       | **70.6**    | 58.2        | 49.5        | 29.2     | 56.6        | 34.7        | 40.7        | 37.5        | 43.9        |
+| **2**  | **GPT-5 (high)🥈**      | **75.5** | **70.7**    | **70.1**    | **55.5** | **65.9**    | **63.9**    | **60.7**    | **60.4** | **63.2**    |
+| **2**  | **Gemini-2.5-Pro🥉**      | <u>69.6</u> | 66.7    | 64.5    | 46.7 | 64.2    | 50.2    | 53.8    | 44.2 | 54.9    |
+| **3**  | **o4-mini**             | 66.7        | <u>61.8</u> | <u>56.1</u> | 41.8     | 53.8        | <u>45.7</u> | 51.0        | 53.4    | <u>51.9</u> |
+| **4**  | **o1**                  | 60.8        | 56.6        | 50.5        | 32.5     | <u>54.4</u> | 40.6        | <u>52.4</u> | 40.4        | 45.6        |
+| **5**  | **Doubao-1.5-pro**       | 70.6    | 58.2        | 49.5        | 29.2     | 56.6        | 34.7        | 40.7        | 37.5        | 43.9        |
 | **6**  | **o3-mini**              | 47.1        | 46.2        | 39.3        | 28.3     | 47.0        | 36.1        | 48.3        | 42.3        | 40.3        |
 | **7**  | **GPT-4.1**              | 51.0        | 52.6        | 41.1        | 17.0     | 39.7        | 31.1        | 42.1        | 35.6        | 35.3        |
 | **8**  | **Claude-3.7-Sonnet**    | 52.9        | 51.8        | 43.0        | 16.7     | 41.4        | 26.5        | 33.8        | 32.4        | 34.6        |
