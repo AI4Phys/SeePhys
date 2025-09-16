@@ -36,14 +36,15 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 - [🤝 Contributors](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-contributors)
 
 ## 💥 News
+- **[2025.09.16]** 🏆 Technical report of the **1st place solution** to our ICML 2025 SeePhys challenge is released! Learn more at the [Technical Report](https://www.arxiv.org/abs/2509.06079).
 - **[2025.08.11]** 🔥 GPT-5 (high) now achieves a new SOTA with **63.2% accuracy**, surpassing Gemini 2.5 Pro by **8.3%**!
 - **[2025.08.11]** 🔥 We have released the performance of human experts, surpassing Gemini 2.5 Pro by **32.4%**!
-- **[2025.07.11]** 💥 Skywork-R1V3 Outperforms Qwen2.5-VL-72B with 32.0% on SeePhys! Learn more at the [Skywork-R1V3 blog](https://arxiv.org/pdf/2507.06167)
+- **[2025.07.11]** 💥 Skywork-R1V3 Outperforms Qwen2.5-VL-72B with 32.0% on SeePhys! Learn more at the [Skywork-R1V3 blog](https://arxiv.org/pdf/2507.06167).
 - **[2025.07.11]** 🏆 The [competition results](https://seephys.github.io/) of 2nd AI for Math Workshop at ICML 2025 have been announced, with the champion achieving the highest accuracy of **60.56%**!
 - **[2025.07.07]** 🚀 We release the ***full*** set with ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys)!
 - **[2025.05.27]** 🔥 The [arXiv paper](http://arxiv.org/abs/2505.19099) is online!
 - **[2025.05.24]** 🚀 We release the ***test*** set without ground truth at [[🤗 Huggingface Dataset]](https://huggingface.co/datasets/SeePhys/SeePhys), and the [evaluation code](https://github.com/AI4Phys/SeePhys)!
-- **[2025.05.24]** 🔥 We release the evaluation [code](https://github.com/AI4Phys/SeePhys) using VLMEvalKit
+- **[2025.05.24]** 🔥 We release the evaluation [code](https://github.com/AI4Phys/SeePhys) .using VLMEvalKit
 - **[2025.05.21]** 🎉 Our SeePhys is officially open for challenges at the [2nd AI for Math Workshop at ICML 2025](https://sites.google.com/view/ai4mathworkshopicml2025/challenge)!
 
 
