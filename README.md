@@ -36,6 +36,7 @@ Official repository for the paper "[SeePhys: Does Seeing Help Thinking? -- Bench
 - [🤝 Contributors](https://github.com/AI4Phys/SeePhys?tab=readme-ov-file#-contributors)
 
 ## 💥 News
+- **[2025.09.19]** 🚀 SeePhys is accepted by **NeurIPS 2025**! See you in San Diego :)
 - **[2025.09.16]** 🏆 Technical report of the **1st place solution** to our ICML 2025 SeePhys challenge is released! Learn more at the [Technical Report](https://www.arxiv.org/abs/2509.06079).
 - **[2025.08.11]** 🔥 GPT-5 (high) now achieves a new SOTA with **63.2% accuracy**, surpassing Gemini 2.5 Pro by **8.3%**!
 - **[2025.08.11]** 🔥 We have released the performance of human experts, surpassing Gemini 2.5 Pro by **32.4%**!
