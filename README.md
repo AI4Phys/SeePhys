@@ -1,4 +1,4 @@
-# (NeurIPS 2025) SeePhys: Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning
+# [NeurIPS 2025] SeePhys: Does Seeing Help Thinking? -- Benchmarking Vision-Based Physics Reasoning
 
 ![MathQA](https://img.shields.io/badge/Task-PhysicsQA-red) 
 ![Mathematical Reasoning](https://img.shields.io/badge/Task-Physics_Reasoning-red) 
